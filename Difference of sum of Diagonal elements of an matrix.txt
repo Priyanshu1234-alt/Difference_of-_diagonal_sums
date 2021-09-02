@@ -1,0 +1,40 @@
+﻿Difference of sum of Diagonal elements of an matrix
+import java.util.*;
+public class Main
+{
+   public static int sumi(int[][] ar,int n)
+    {
+        int s=0;
+        int s2=0;
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                if(i==j)
+                {
+                    s=s+ar[i][j];
+                }
+                if(i==n-j-1)
+                {
+                    s2=s2+ar[i][j];
+                }
+            }
+        }
+        return Math.abs(s2-s);
+        
+    }
+	public static void main(String[] args) {
+	    Scanner sc= new Scanner(System.in);
+	    int n=sc.nextInt();
+	    int[][] ar=new int[n][n];
+	    for(int i=0;i<n;i++)
+	        {
+	            for(int j=0;j<n;j++)
+	            {
+	                ar[i][j]=sc.nextInt();
+	            }
+	            
+	        }
+	   System.out.print(sumi(ar,n));
+	}
+}
